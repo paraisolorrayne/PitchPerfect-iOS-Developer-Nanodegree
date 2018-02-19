@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5BAFFF4390E691C29050927 /* Pods_PitchPerfect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C418E2F58B012ECA38603C54 /* Pods_PitchPerfect.framework */; };
 		FD8AF9FB203AF96800BD3E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8AF9FA203AF96800BD3E2E /* AppDelegate.swift */; };
 		FD8AF9FD203AF96800BD3E2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8AF9FC203AF96800BD3E2E /* ViewController.swift */; };
 		FD8AFA00203AF96800BD3E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8AF9FE203AF96800BD3E2E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BD572566E1E0CA1C4676509 /* Pods-PitchPerfect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitchPerfect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect.debug.xcconfig"; sourceTree = "<group>"; };
+		C418E2F58B012ECA38603C54 /* Pods_PitchPerfect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PitchPerfect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39A9B7F59CA1ED9E919AE80 /* Pods-PitchPerfect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitchPerfect.release.xcconfig"; path = "Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect.release.xcconfig"; sourceTree = "<group>"; };
 		FD8AF9F7203AF96700BD3E2E /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8AF9FA203AF96800BD3E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD8AF9FC203AF96800BD3E2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5BAFFF4390E691C29050927 /* Pods_PitchPerfect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012CC1A18461C94B5C345038 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C418E2F58B012ECA38603C54 /* Pods_PitchPerfect.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8AA190B45037F2759673E3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BD572566E1E0CA1C4676509 /* Pods-PitchPerfect.debug.xcconfig */,
+				F39A9B7F59CA1ED9E919AE80 /* Pods-PitchPerfect.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FD8AF9EE203AF96700BD3E2E = {
 			isa = PBXGroup;
 			children = (
 				FD8AF9F9203AF96700BD3E2E /* PitchPerfect */,
 				FD8AF9F8203AF96700BD3E2E /* Products */,
+				E8AA190B45037F2759673E3E /* Pods */,
+				012CC1A18461C94B5C345038 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD8AFA09203AF96800BD3E2E /* Build configuration list for PBXNativeTarget "PitchPerfect" */;
 			buildPhases = (
+				DA9510ACC65FF80FCCC41B67 /* [CP] Check Pods Manifest.lock */,
 				FD8AF9F3203AF96700BD3E2E /* Sources */,
 				FD8AF9F4203AF96700BD3E2E /* Frameworks */,
 				FD8AF9F5203AF96700BD3E2E /* Resources */,
+				3D367049B8D56A4D37488FD7 /* [CP] Embed Pods Frameworks */,
+				45252AC83A79FA8986B71A08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D367049B8D56A4D37488FD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45252AC83A79FA8986B71A08 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA9510ACC65FF80FCCC41B67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PitchPerfect-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD8AF9F3203AF96700BD3E2E /* Sources */ = {
@@ -272,6 +350,7 @@
 		};
 		FD8AFA0A203AF96800BD3E2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD572566E1E0CA1C4676509 /* Pods-PitchPerfect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +366,7 @@
 		};
 		FD8AFA0B203AF96800BD3E2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F39A9B7F59CA1ED9E919AE80 /* Pods-PitchPerfect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
