@@ -57,6 +57,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FD473B5D2044517A00BD8A1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD473B5E2044518A00BD8A1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FD8AF9FE203AF96800BD3E2E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD473B5F2044519200BD8A1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FD8AF9FC203AF96800BD3E2E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FD8AF9EE203AF96700BD3E2E = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				FD8AF9FA203AF96800BD3E2E /* AppDelegate.swift */,
-				FD8AF9FC203AF96800BD3E2E /* ViewController.swift */,
-				FD8AF9FE203AF96800BD3E2E /* Main.storyboard */,
 				FD8AFA01203AF96800BD3E2E /* Assets.xcassets */,
-				FD8AFA03203AF96800BD3E2E /* LaunchScreen.storyboard */,
+				FD473B5F2044519200BD8A1A /* Controller */,
 				FD8AFA06203AF96800BD3E2E /* Info.plist */,
+				FD8AFA03203AF96800BD3E2E /* LaunchScreen.storyboard */,
+				FD473B5D2044517A00BD8A1A /* Model */,
+				FD473B5E2044518A00BD8A1A /* View */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
