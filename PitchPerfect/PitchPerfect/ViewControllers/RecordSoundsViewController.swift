@@ -32,9 +32,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if flag{
+        if flag {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-        }else{
+        } else {
             print("Recording was not successful")
         }
     }
@@ -42,19 +42,22 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
 // MARK: Actions
 extension RecordSoundsViewController {
+
+    func didChangeFromState(_ isRecording: Bool = false) {
+        recordingLabel.text = isRecording ? "Recording in progress": "Tap to Record"
+        recordButton.isEnabled = !isRecording
+        stopRecordingButton.isEnabled = isRecording
+    }
+
     @IBAction func stopRecording(_ sender: Any) {
-        stopRecordingButton.isEnabled = false
-        recordButton.isEnabled = true
-        recordingLabel.text = "Tap to Record"
+        didChangeFromState(false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
     
     @IBAction func recordAudio(_ sender: Any) {
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
-        recordingLabel.text = "Recording in progress"
+        didChangeFromState(true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
