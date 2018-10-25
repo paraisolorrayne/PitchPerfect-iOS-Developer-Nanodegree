@@ -35,10 +35,11 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
+        snailButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         configureUI(.notPlaying)
     }
     

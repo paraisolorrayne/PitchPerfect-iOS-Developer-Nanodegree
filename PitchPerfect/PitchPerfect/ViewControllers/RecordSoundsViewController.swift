@@ -10,7 +10,16 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
-    
+
+    struct Identifiers {
+        static let stop = "Stop recording"
+        static let progress = "Recording in progress"
+        static let tapRecord = "Tap to Record"
+        static let recordedVoice = "recordedVoice.wav"
+        static let segue = "stopRecording"
+    }
+
+
     // MARK: properties
     var audioRecorder: AVAudioRecorder!
     
@@ -27,13 +36,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let title: NSAttributedString = NSAttributedString(string: "Stop recording")
+        let title: NSAttributedString = NSAttributedString(string: Identifiers.stop)
         stopRecordingButton.set(image: #imageLiteral(resourceName: "Stop"), attributedTitle: title, at: .bottom, width: 10.0, state: .normal)
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+            performSegue(withIdentifier: Identifiers.segue, sender: audioRecorder.url)
         } else {
             print("Recording was not successful")
         }
@@ -44,7 +53,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 extension RecordSoundsViewController {
 
     func didChangeFromState(_ isRecording: Bool = false) {
-        recordingLabel.text = isRecording ? "Recording in progress": "Tap to Record"
+        recordingLabel.text = isRecording ? Identifiers.progress : Identifiers.tapRecord
         recordButton.isEnabled = !isRecording
         stopRecordingButton.isEnabled = isRecording
     }
@@ -59,7 +68,7 @@ extension RecordSoundsViewController {
     @IBAction func recordAudio(_ sender: Any) {
         didChangeFromState(true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-        let recordingName = "recordedVoice.wav"
+        let recordingName = Identifiers.recordedVoice
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
         
@@ -78,7 +87,7 @@ extension RecordSoundsViewController {
 // MARK: Navigation
 extension RecordSoundsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "stopRecording"{
+        if segue.identifier == Identifiers.segue {
             let playSoundsVC = segue.destination as! PlaySoundsViewController
             let recordedAudioURL = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudioURL
